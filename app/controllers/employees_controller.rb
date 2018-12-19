@@ -11,8 +11,9 @@ class EmployeesController < ApplicationController
 
   def create
     @dogs = Dog.all
-    @employee = Employee.create(employee_params)
+    @employee = Employee.new(employee_params)
     if @employee.valid?
+      @employee.save
       redirect_to employees_path
     else
       flash[:errors] = @employee.errors.full_messages
