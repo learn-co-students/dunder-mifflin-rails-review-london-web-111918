@@ -1,0 +1,13 @@
+<h1> <%= "#{@employee.first_name} #{@employee.last_name}" %> </h1>
+
+<%= link_to 'Go Back', employees_path %>
+<h3>About Me: </h3>
+<ul>
+  <li><%= @employee.alias %></li>
+  <li><%= @employee.title %></li>
+  <li><%= @employee.office %></li>
+  <p>Photo:</p>
+  <img src="<%= @employee.img_url %>">
+
+  
+</ul>

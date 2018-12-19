@@ -3,7 +3,11 @@ class DogsController < ApplicationController
   before_action :set_dog, only: [:show, :edit, :update, :destroy]
 
   def index
-    @dogs = Dog.all
+    if params[:order]
+      @dogs = Dog.order_by_no_of_employees
+    else
+      @dogs = Dog.all
+    end
   end
 
   def new
@@ -34,7 +38,7 @@ class DogsController < ApplicationController
   private
 
   def dog_params
-    params.require(:dog).permit(:name, :breed, :age)
+    params.permit(:name, :breed, :age)
   end
 
   def set_dog
