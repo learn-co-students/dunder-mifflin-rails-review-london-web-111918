@@ -9,6 +9,15 @@
   </head>
 
   <body>
+    <h1>Dunder Mifflin Dog App</h1>
+    <% if flash[:errors] %>
+        <% flash[:errors].each do |e| %>
+          <li style="color: red;">
+            <%= e %>
+          </li>
+        <% end %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

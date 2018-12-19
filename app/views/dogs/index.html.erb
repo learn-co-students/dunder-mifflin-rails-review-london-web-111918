@@ -1,0 +1,7 @@
+<h2> All Dogs </h2>
+
+<% @dogs.each do |dog| %>
+<%= link_to dog.name, dog %><br>
+<% end %>
+<br>
+<%= link_to "Order Dogs by number of owners", ordered_path %>
