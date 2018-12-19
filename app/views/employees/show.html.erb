@@ -1,0 +1,6 @@
+<h2><%=@employee.name_to_string%></h2>
+<%= image_tag @employee.img_url %>
+<p>Alias: <%=@employee.alias%>, Title: <%=@employee.title%>, Office: <%=@employee.office%></p>
+<p>Dog: <%=link_to @employee.dog.name, dog_path(@employee.dog)%></p>
+<p><%= link_to 'Edit Employee', edit_employee_path(@employee) %></p>
+<p><%= link_to 'Back', employees_path %></p>

@@ -1,0 +1,13 @@
+<h2>All Employees</h2>
+<% @employees.each do |e| %>
+
+<ul>
+  <li>
+    <p>Name: <%=link_to e.name_to_string, employee_path(e)%>, Alias: <%=e.alias%>, Title: <%=e.title%>, Office: <%=e.office%></p>
+    <p>Dog: <%=e.dog.name%></p>
+
+  </li>
+</ul>
+<br>
+<%end%>
+<%= link_to 'Create a New Employee', new_employee_path %>
