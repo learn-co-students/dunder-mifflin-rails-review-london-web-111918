@@ -1,15 +1,15 @@
 class Employee < ApplicationRecord
   belongs_to :dog
 
-  validates :alias, uniqueness: true, if: :no_alias?
-  validates :title, uniqueness: true, if: :no_title?
+  validates :alias, uniqueness: true, unless: :no_alias?
+  validates :title, uniqueness: true, unless: :no_title?
 
   def no_alias?
-    :alias == "none"
+    self.alias == "none"
   end
 
   def no_title?
-    :title == "none"
+    self.title == "none"
   end
 
 end
