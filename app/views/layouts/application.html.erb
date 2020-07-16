@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
+<h1> Dunder Mifflin App</h1>
   <head>
     <title>DunderMifflinPetShop</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
+    <% if flash[:errors] %>
+      <ul>
+        <% flash[:errors].each do |e| %>
+          <li style="color: red;">
+            <%= e %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+
     <%= yield %>
+
   </body>
 </html>
